@@ -14,29 +14,61 @@ public class TeacherController {
         Scanner scanner = new Scanner(System.in);
         for(Student student : students){
             if(student.getStudentID() == studentID){
-                System.out.print("How many grades do you want to update? ");
-                int numGrades = Integer.parseInt(scanner.nextLine());
-            
+                ArrayList<Double> grades = student.getGrades();
+                ArrayList<Integer> credits = student.getCredits();
 
-            ArrayList<Double> newGrades = new ArrayList<>();
-            ArrayList<Integer> newCredits = new ArrayList<>();
-
-            for (int i = 0; i < numGrades; i++) {
-                System.out.print("Enter grade #" + (i + 1) + ": ");
-                double grade = scanner.nextDouble();
-                System.out.print("Enter credit hours for grade #" + (i + 1) + ": ");
-                int credit = scanner.nextInt();
-                newGrades.add(grade);
-                newCredits.add(credit);
-            }
-        
-            student.setGrades(newGrades);
-            student.setCredits(newCredits);
-            student.setGPA(0);
+                System.out.println("Current Grades:");
+                for (int i = 0; i < grades.size(); i++) {
+                    System.out.println("Grade = " + grades.get(i) + ", Credit = " + credits.get(i));
+                }
+    
+                System.out.print("Enter index of the grade you want to update: ");
+                int index = Integer.parseInt(scanner.nextLine());
+    
+                if (index >= 0 && index < grades.size()) {
+                    System.out.print("Enter new grade: ");
+                    double newGrade = Double.parseDouble(scanner.nextLine());
+    
+                    System.out.print("Enter new credit hours: ");
+                    int newCredit = Integer.parseInt(scanner.nextLine());
+    
+                    grades.set(index, newGrade);
+                    credits.set(index, newCredit);
+    
+                    student.setGrades(grades);
+                    student.setCredits(credits);
+                    student.setGPA(0);
+                }
             System.out.println("Grades updated for student " + student.getName());
             break;
         }
-    } System.out.println("Student with " + studentID + " not found.");
+    } 
+    }
+
+    public void addStudentGrade(ArrayList<Student> students, int studentID) {
+        Scanner scanner = new Scanner(System.in);
+    
+        for (Student student : students) {
+            if (student.getStudentID() == studentID) {
+                ArrayList<Double> grades = student.getGrades();
+                ArrayList<Integer> credits = student.getCredits();
+    
+                System.out.print("Enter new grade to add: ");
+                double newGrade = Double.parseDouble(scanner.nextLine());
+    
+                System.out.print("Enter credit hours for this grade: ");
+                int newCredit = Integer.parseInt(scanner.nextLine());
+    
+                grades.add(newGrade);
+                credits.add(newCredit);
+    
+                student.setGrades(grades);
+                student.setCredits(credits);
+                student.setGPA(0); 
+    
+                System.out.println("New grade added for student " + student.getName());
+            }
+        }
     }
 
     public void listAllTeachers(ArrayList<Teacher> teachers) {

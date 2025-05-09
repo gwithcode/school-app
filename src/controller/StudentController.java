@@ -183,10 +183,12 @@ public class StudentController {
     public void listAllStudents(ArrayList<Student> students){
         for (Student student : students){
             System.out.println("Student Name: " + student.getName());
-            System.out.println("Student Age" + student.getAge());
+            System.out.println("Student Age " + student.getAge());
             System.out.println("Student GPA: " + student.getGPA());
             System.out.println("Student Rank: " + student.getClassRank());
             System.out.println("Student Grade Year: " + student.getGradeYear());
+            System.out.println("Grades: " + student.getGrades());
+            System.out.println("Credits: " + student.getCredits());
             System.out.println("---------------------------------------------");
         }
     }

@@ -37,7 +37,9 @@ public class Main {
 
                 if (currentStudent == null) {
                     System.out.println("Student not found.");
+                    break;
                 }
+
                 boolean studentExit = false;
                 while (!studentExit) {
                     System.out.println("\nStudent Menu:");
@@ -79,7 +81,7 @@ public class Main {
                 }
                 break;
 
-            case 2:
+                case 2:
                 System.out.println("\nWelcome, Teacher! What would you like to do?");
                 boolean teacherExit = false;
                 while (!teacherExit) {
@@ -88,11 +90,12 @@ public class Main {
                     System.out.println("3. Update Student Grades");
                     System.out.println("4. Add New Student");
                     System.out.println("5. View All Teachers");
-                    System.out.println("6. Exit");
+                    System.out.println("6. Add Grade to Student");
+                    System.out.println("7. Exit");
                     System.out.print("Enter your choice: ");
-
+            
                     int choice = Integer.parseInt(scanner.nextLine());
-
+            
                     switch (choice) {
                         case 1:
                             studentController.listAllStudents(students);
@@ -106,8 +109,8 @@ public class Main {
                             break;
                         case 3:
                             System.out.print("Enter student ID to update grades: ");
-                            int studentID = Integer.parseInt(scanner.nextLine());
-                            teacherController.updateStudentGrades(students, studentID);
+                            int updateID = Integer.parseInt(scanner.nextLine());
+                            teacherController.updateStudentGrades(students, updateID);
                             break;
                         case 4:
                             studentController.createNewStudent(studentFile);
@@ -117,8 +120,13 @@ public class Main {
                             teacherController.listAllTeachers(teachers);
                             break;
                         case 6:
+                            System.out.print("Enter student ID to add a grade: ");
+                            int addID = Integer.parseInt(scanner.nextLine());
+                            teacherController.addStudentGrade(students, addID);
+                            break;
+                        case 7:
                             teacherExit = true;
-                            System.out.println("Exiting");
+                            System.out.println("Exiting...");
                             break;
                         default:
                             System.out.println("Invalid choice. Try again.");

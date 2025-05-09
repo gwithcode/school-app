@@ -1,18 +1,14 @@
-## Getting Started
+Simple console based app allowing for teachers to view grades, add in new grades and students, as well as view by rank (ascending or descending)
+Also allows for students to view their info, their rank, gpa, etc
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+SOURCES USED DOWN BELOW
+https://www.geeksforgeeks.org/sort-an-array-in-java-using-comparator/#
+https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/
+https://www.w3schools.com/java
+https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html
+https://www.geeksforgeeks.org/java-io-filereader-class/
+https://www.geeksforgeeks.org/writing-a-csv-file-in-java-using-opencsv/
 
-## Folder Structure
+As well as assistance on mathematical formulas (gpa calculation, etc) from other places on the internet
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+The main method and other things were made using resources from previous Java classes as well (ITSC1212, 1213) as we did somewhat similar projects in there

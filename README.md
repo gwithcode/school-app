@@ -12,3 +12,5 @@ SOURCES USED DOWN BELOW
 As well as assistance on mathematical formulas (gpa calculation, etc) from other places on the internet
 
 The main method and other things were made using resources from previous Java classes as well (ITSC1212, 1213) as we did somewhat similar projects in there
+
+Also used many of the videos and resources provided in this class

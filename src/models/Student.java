@@ -18,6 +18,10 @@ public class Student extends Person {
         this.credits = credits;
     }
 
+    public int getStudentID(){
+        return studentID;
+    }
+
     public double getGPA() {
         return GPA;
     }
@@ -40,5 +44,13 @@ public class Student extends Person {
 
     public void setGPA(double GPA){
         this.GPA = GPA;
+    }
+
+    public void setGrades(ArrayList<Double> grades) {
+        this.grades = grades;
+    }
+    
+    public void setCredits(ArrayList<Integer> credits) {
+        this.credits = credits;
     }
 }

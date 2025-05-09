@@ -35,6 +35,8 @@ public class StudentController {
                 totalGradePoint = totalGradePoint + (2 * credits.get(i));
             } else if(grades.get(i) >= 60){
                 totalGradePoint = totalGradePoint + (1 * credits.get(i));
+            } else{
+                totalGradePoint = 0;
             }
         }
         return totalGradePoint;
@@ -59,9 +61,35 @@ public class StudentController {
     }
 
     public void assignClassRank(ArrayList<Student> students){
+        for(Student student: students){
+            student.setGPA(calculateGPA(student));
+        }
+
+        students.sort(Comparator.comparingDouble(Student::getGPA).reversed()); //sort from high to low
+
         for (int i = 0; i < students.size(); i++) {
             students.get(i).setClassRank(i + 1);
         }
+    }
+
+    public ArrayList<String> convertGradesNumericToLetter(Student student){
+        ArrayList<String> letterGrades = new ArrayList<>();
+        ArrayList<Double> numericGrades = student.getGrades();
+
+        for(double grade : numericGrades){
+            if(grade >= 90 && grade <= 100){
+                letterGrades.add("A");
+            } else if(grade >= 80){
+                letterGrades.add("B");
+            } else if(grade >= 70){
+                letterGrades.add("C");
+            } else if(grade >= 60){
+                letterGrades.add("D");
+            } else {
+                letterGrades.add("F");
+            }
+        }
+        return letterGrades;
     }
 
     public void createNewStudent(String filePath) {
@@ -90,13 +118,12 @@ public class StudentController {
     
         grades.add(0.0);
         credits.add(0);
-
-        scanner.close();
     
         try (FileWriter writer = new FileWriter(filePath, true)) {
             StringBuilder sb = new StringBuilder();
             sb.append(name).append(",").append(gradeYear).append(",")
-              .append(age).append(",").append(gpa).append(",").append(classRank).append(studentID);
+            .append(age).append(",").append(gpa).append(",").append(classRank).append(",").append(studentID);
+
     
             for (double grade : grades) {
                 sb.append(",").append(grade);
@@ -151,5 +178,16 @@ public class StudentController {
         }
     
         return students;
+    }
+
+    public void listAllStudents(ArrayList<Student> students){
+        for (Student student : students){
+            System.out.println("Student Name: " + student.getName());
+            System.out.println("Student Age" + student.getAge());
+            System.out.println("Student GPA: " + student.getGPA());
+            System.out.println("Student Rank: " + student.getClassRank());
+            System.out.println("Student Grade Year: " + student.getGradeYear());
+            System.out.println("---------------------------------------------");
+        }
     }
 }

@@ -2,12 +2,12 @@ Simple console based app allowing for teachers to view grades, add in new grades
 Also allows for students to view their info, their rank, gpa, etc
 
 SOURCES USED DOWN BELOW
-https://www.geeksforgeeks.org/sort-an-array-in-java-using-comparator/#
-https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/
-https://www.w3schools.com/java
-https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html
-https://www.geeksforgeeks.org/java-io-filereader-class/
-https://www.geeksforgeeks.org/writing-a-csv-file-in-java-using-opencsv/
+* https://www.geeksforgeeks.org/sort-an-array-in-java-using-comparator/#
+* https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/
+* https://www.w3schools.com/java
+* https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html
+* https://www.geeksforgeeks.org/java-io-filereader-class/
+* https://www.geeksforgeeks.org/writing-a-csv-file-in-java-using-opencsv/
 
 As well as assistance on mathematical formulas (gpa calculation, etc) from other places on the internet
 

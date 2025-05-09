@@ -10,4 +10,16 @@ public class Person {
         this.gradeYear = gradeYear;
         this.age = age;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getGradeYear() {
+        return gradeYear;
+    }
+
+    public int getAge() {
+        return age;
+    }
 }
